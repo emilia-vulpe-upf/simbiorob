@@ -58,7 +58,7 @@ class MeArm(object):
         self.closeGripper()
         self.openGripper()
 
-    def gotoPoint(self, x, y, z, ik_pos_threshold=1, max_tries = 20, damp_deg=math.inf):
+    def gotoPoint(self, x, y, z, ik_pos_threshold=1, max_tries = 20, damp_deg=1000):
         print ("Moving to:", (x, y, z))
 
         current_tries = 0
