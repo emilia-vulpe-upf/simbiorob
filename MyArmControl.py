@@ -130,7 +130,7 @@ class MeArm(object):
 
                     # Turn the link
                     servos_rotation[current_effector_index - 1](turn_deg)
-                    self._body.tt.Hs[current_effector_index] = rotz(turn_deg)
+                    self._body.tt.Hs[current_effector_index] = self._body.tt.Hs[current_effector_index] + rotz(turn_deg)
 
                 # If the z element of the cross product is negative, rotate counter-clockwise
                 elif cross_result[2] < 0:
@@ -144,7 +144,7 @@ class MeArm(object):
 
                     # Turn the link
                     servos_rotation[current_effector_index - 1](turn_deg)
-                    self._body.tt.Hs[current_effector_index] = rotz(turn_deg)
+                    self._body.tt.Hs[current_effector_index] = self._body.tt.Hs[current_effector_index] + rotz(turn_deg)
 
             # Update the index of the current link
             if current_effector_index == 0:
