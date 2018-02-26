@@ -12,21 +12,20 @@ class MeArm(object):
         self._L2 = 8.5  # Elbow to wrist length
         self._L3 = 8.5  # Wrist to hand length
 
-        self._A1 = 60   # Shoulder to elbow angle
-        self._A2 = -20  # Elbow to wrist angle
-        self._A3 = -30  # Wrist to hand angle
+        self._A1 = 90   # Shoulder to elbow angle
+        self._A2 = 90  # Elbow to wrist angle
+        self._A3 = 25  # Wrist to hand angle
 
-        self.servos = {"base": ServoSB(7, -90, 90),
-                       "shoulder": ServoSB(8, -90, 90),
-                       "elbow": ServoSB(9, -90, 90),
-                       "grip": ServoSB(10, 0, 90)}
+        self.servos = {"base": ServoSB(11, -90, 90),
+                       "shoulder": ServoSB(13, -90, 90),
+                       "elbow": ServoSB(7, -90, 90),
+                       "grip": ServoSB(15, 0, 90)}
 
         self._body = MultiLink()
         self._body.addLink(self._L1, self._A1)
         self._body.addLink(self._L2, self._A2)
         self._body.addLink(self._L3, self._A3)
         self._body.compose()
-
 
     def base(self, angle):
         print ("Moving base to:", angle)

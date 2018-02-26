@@ -1,0 +1,4 @@
+The code implements Inverse Kinematics algorithm priposed in "Making Kine More Flexible" article.
+
+To run:
+python MyArmControl.py
